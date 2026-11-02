@@ -10,7 +10,7 @@ You're welcome to copy and adapt anything here for your own packs.
 
 1. Copy the `quests` folder into `config/trailmark/` of your instance (or your server), so you end up with
    `config/trailmark/quests/book.json`. Back up any quests you already have first; this replaces them.
-2. Start the game and press **N**. If the game was already running, the book reloads on its own within a few seconds.
+2. Start the game and press **I**. If the game was already running, the book reloads on its own within a few seconds.
 
 Optional extras in [`extras/`](extras):
 

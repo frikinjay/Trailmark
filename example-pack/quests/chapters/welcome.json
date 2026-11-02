@@ -42,8 +42,8 @@
         "",
         "| Key | Does |",
         "|---|---|",
-        "| <kbd>N</kbd> | Opens this book |",
-        "| <kbd>H</kbd> | Shows or hides the tracker |",
+        "| <kbd>I</kbd> | Opens this book |",
+        "| <kbd>'</kbd> | Shows or hides the tracker |",
         "| <kbd>T</kbd> | Tracks the selected quest |",
         "",
         "## Things in text",
@@ -81,7 +81,7 @@
       "title": "Tracking Quests",
       "description": [
         "Select a quest and press <kbd>T</kbd> to **track** it. Tracked quests show on the HUD, with a compass arrow for places to visit.",
-        "Press <kbd>H</kbd> to hide or show the tracker; it remembers your choice.",
+        "Press <kbd>'</kbd> to hide or show the tracker; it remembers your choice.",
         "",
         "![Compass](media/compass.gif){width=32}"
       ]

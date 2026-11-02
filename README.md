@@ -17,7 +17,7 @@ This repository is the public side of Trailmark. The mod itself is on
 
 Quests live in `config/trailmark/quests` on the server (or in your singleplayer instance). Trailmark doesn't ship a
 book of its own, so a fresh install starts empty. Operators can build one entirely in game: open the book with
-**N**, then **Options > Edit Quests**. Prefer files? Everything is plain JSON, and the folder reloads by itself
+**I**, then **Options > Edit Quests**. Prefer files? Everything is plain JSON, and the folder reloads by itself
 while the game runs.
 
 Coming from FTB Quests? `/trailmark import ftbquests` converts your book and your players' progress.
