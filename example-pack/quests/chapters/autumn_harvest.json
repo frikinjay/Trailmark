@@ -1,0 +1,70 @@
+{
+  "title": "Autumn Harvest",
+  "subtitle": "September 22 to December 20",
+  "icon": "minecraft:carved_pumpkin",
+  "group": "events",
+  "season": {
+    "from": "09-22",
+    "until": "12-20"
+  },
+  "quests": [
+    {
+      "id": "pumpkins",
+      "title": "Pumpkin Patch",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "event"
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:pumpkin",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "id": "lantern",
+      "title": "Jack o'Lantern",
+      "x": 3,
+      "y": 0,
+      "dependencies": "pumpkins",
+      "tags": [
+        "event"
+      ],
+      "tasks": [
+        {
+          "type": "craft",
+          "item": "minecraft:jack_o_lantern",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "witch",
+      "title": "Witching Hour",
+      "x": 6,
+      "y": 0,
+      "dependencies": "lantern",
+      "tags": [
+        "event",
+        "milestone"
+      ],
+      "icon": "entity:minecraft:witch",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:pumpkin_pie",
+          "count": 8
+        }
+      ],
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "minecraft:witch"
+        }
+      ]
+    }
+  ]
+}

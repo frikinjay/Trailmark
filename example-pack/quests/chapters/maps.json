@@ -1,0 +1,95 @@
+{
+  "title": "Maps and Waypoints",
+  "subtitle": "JourneyMap and Xaero's Minimap",
+  "icon": "minecraft:map",
+  "group": "mods",
+  "order": 1,
+  "default_shape": "circle",
+  "quests": [
+    {
+      "id": "north_camp",
+      "title": "North Camp",
+      "x": 0,
+      "y": -2,
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:red_banner",
+      "tasks": [
+        {
+          "type": "location",
+          "x": 0,
+          "y": 64,
+          "z": -300,
+          "radius": 16,
+          "ignore_y": true
+        }
+      ]
+    },
+    {
+      "id": "east_camp",
+      "title": "East Camp",
+      "x": 3,
+      "y": 0,
+      "dependencies": "north_camp",
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:yellow_banner",
+      "tasks": [
+        {
+          "type": "location",
+          "x": 300,
+          "y": 64,
+          "z": 0,
+          "radius": 16,
+          "ignore_y": true
+        }
+      ]
+    },
+    {
+      "id": "south_camp",
+      "title": "South Camp",
+      "x": 0,
+      "y": 2,
+      "dependencies": "east_camp",
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:blue_banner",
+      "tasks": [
+        {
+          "type": "location",
+          "x": 0,
+          "y": 64,
+          "z": 300,
+          "radius": 16,
+          "ignore_y": true
+        }
+      ]
+    },
+    {
+      "id": "west_camp",
+      "title": "West Camp",
+      "x": -3,
+      "y": 0,
+      "dependencies": "south_camp",
+      "tags": [
+        "mods",
+        "milestone"
+      ],
+      "icon": "minecraft:green_banner",
+      "description": "Track these quests: each destination appears as a waypoint on your minimap and world map, and vanishes when you arrive.",
+      "tasks": [
+        {
+          "type": "location",
+          "x": -300,
+          "y": 64,
+          "z": 0,
+          "radius": 16,
+          "ignore_y": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Winter Festival",
+  "subtitle": "All of December",
+  "icon": "minecraft:snow_block",
+  "group": "events",
+  "season": {
+    "from": "12-01",
+    "until": "12-31",
+    "hidden": true
+  },
+  "quests": [
+    {
+      "id": "snowman",
+      "title": "Build a Snowman",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "event"
+      ],
+      "icon": "entity:minecraft:snow_golem",
+      "tasks": [
+        {
+          "type": "place",
+          "block": "minecraft:carved_pumpkin"
+        }
+      ]
+    }
+  ]
+}

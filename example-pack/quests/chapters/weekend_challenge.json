@@ -1,0 +1,39 @@
+{
+  "title": "Weekend Challenge",
+  "subtitle": "Saturdays and Sundays",
+  "icon": "minecraft:clock",
+  "group": "events",
+  "season": {
+    "days": [
+      "saturday",
+      "sunday"
+    ]
+  },
+  "quests": [
+    {
+      "id": "weekend_mining",
+      "title": "Weekend Miner",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "event"
+      ],
+      "icon": "minecraft:iron_ore",
+      "repeat": "weekly",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:diamond",
+          "count": 2
+        }
+      ],
+      "tasks": [
+        {
+          "type": "mine",
+          "block": "#c:ores",
+          "count": 50
+        }
+      ]
+    }
+  ]
+}

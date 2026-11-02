@@ -1,0 +1,30 @@
+{
+  "title": "Recipe Viewers",
+  "subtitle": "JEI and EMI",
+  "icon": "minecraft:knowledge_book",
+  "group": "mods",
+  "order": 0,
+  "quests": [
+    {
+      "id": "lookup",
+      "title": "Look It Up",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:compass",
+      "description": [
+        "With JEI and EMI installed, hover any item in the quest book and press <kbd>R</kbd> for recipes or <kbd>U</kbd> for uses.",
+        "",
+        "<item id=\"minecraft:compass\"/> <item id=\"minecraft:iron_ingot\"/> <item id=\"minecraft:redstone\"/>"
+      ],
+      "tasks": [
+        {
+          "type": "craft",
+          "item": "minecraft:compass"
+        }
+      ]
+    }
+  ]
+}

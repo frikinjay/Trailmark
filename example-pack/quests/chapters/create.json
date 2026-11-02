@@ -1,0 +1,84 @@
+{
+  "title": "Create",
+  "subtitle": "Kinetics",
+  "icon": "create:cogwheel",
+  "group": "mods",
+  "order": 6,
+  "quests": [
+    {
+      "id": "alloy",
+      "title": "Andesite Alloy",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "create:andesite_alloy",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:andesite_alloy",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "id": "spin",
+      "title": "Get Things Spinning",
+      "x": 3,
+      "y": 0,
+      "dependencies": "alloy",
+      "tags": [
+        "mods"
+      ],
+      "icon": {
+        "block": "create:water_wheel",
+        "spin": 30
+      },
+      "description": "Any machine near you turning at 32 RPM or faster.",
+      "tasks": [
+        {
+          "type": "create_rotation",
+          "speed": 32
+        }
+      ]
+    },
+    {
+      "id": "press",
+      "title": "Under Pressure",
+      "x": 6,
+      "y": -1,
+      "dependencies": "spin",
+      "tags": [
+        "mods"
+      ],
+      "icon": "block:create:mechanical_press",
+      "tasks": [
+        {
+          "type": "create_rotation",
+          "speed": 16,
+          "block": "create:mechanical_press"
+        }
+      ]
+    },
+    {
+      "id": "stress",
+      "title": "Power Grid",
+      "x": 6,
+      "y": 1,
+      "dependencies": "spin",
+      "tags": [
+        "mods",
+        "milestone"
+      ],
+      "icon": "block:create:windmill_bearing",
+      "description": "A kinetic network near you with 256 stress units of capacity.",
+      "tasks": [
+        {
+          "type": "create_stress",
+          "capacity": 256
+        }
+      ]
+    }
+  ]
+}

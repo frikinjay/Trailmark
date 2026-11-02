@@ -1,0 +1,12 @@
+Trailmark
+Copyright (c) 2026 frikinjay. All Rights Reserved.
+
+This software and its source code, assets and documentation are the property of the
+copyright holder. No part of it may be copied, modified, redistributed, re-uploaded or
+sublicensed without prior written permission from the copyright holder.
+
+Modpacks may include the unmodified mod file when distributed through CurseForge or
+Modrinth. Other mods may depend on and call Trailmark's public API (the
+com.frikinjay.trailmark.api packages) without bundling or modifying Trailmark itself.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

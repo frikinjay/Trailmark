@@ -1,0 +1,87 @@
+{
+  "title": "Storage Networks",
+  "subtitle": "Refined Storage and AE2",
+  "icon": "minecraft:chest",
+  "group": "mods",
+  "order": 2,
+  "quests": [
+    {
+      "id": "rs_controller",
+      "title": "Refined Storage",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "block:refinedstorage:controller",
+      "tasks": [
+        {
+          "type": "craft",
+          "item": "refinedstorage:controller"
+        }
+      ]
+    },
+    {
+      "id": "rs_wireless",
+      "title": "Storage on the Go",
+      "x": 3,
+      "y": 0,
+      "dependencies": "rs_controller",
+      "tags": [
+        "mods"
+      ],
+      "icon": "refinedstorage:wireless_grid",
+      "description": "Items in a network count while you carry a linked, powered wireless grid. Taking them out needs **Take from Storage Networks** in the settings.",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "refinedstorage:wireless_grid"
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cobblestone",
+          "count": 512
+        }
+      ]
+    },
+    {
+      "id": "ae_controller",
+      "title": "Applied Energistics",
+      "x": 0,
+      "y": 3,
+      "tags": [
+        "mods"
+      ],
+      "icon": "block:ae2:controller",
+      "tasks": [
+        {
+          "type": "craft",
+          "item": "ae2:controller"
+        }
+      ]
+    },
+    {
+      "id": "ae_terminal",
+      "title": "Wireless Access",
+      "x": 3,
+      "y": 3,
+      "dependencies": "ae_controller",
+      "tags": [
+        "mods"
+      ],
+      "icon": "ae2:wireless_terminal",
+      "description": "Iron in your ME network counts while you carry a linked wireless terminal.",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "ae2:wireless_terminal"
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 256
+        }
+      ]
+    }
+  ]
+}

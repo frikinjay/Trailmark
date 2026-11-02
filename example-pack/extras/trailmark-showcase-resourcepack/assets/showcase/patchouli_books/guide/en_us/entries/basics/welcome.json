@@ -1,0 +1,11 @@
+{
+  "name": "Welcome",
+  "icon": "trailmark:quest_book",
+  "category": "showcase:basics",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "You opened this from a $(l)Trailmark$() quest link. Links can open books, entries and single pages."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Explorer's Cache",
+  "icon": "minecraft:chest",
+  "rolls": 1,
+  "entries": [
+    {
+      "weight": 3,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:map",
+        "count": 2
+      }
+    },
+    {
+      "weight": 3,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:compass"
+      }
+    },
+    {
+      "weight": 2,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:spyglass"
+      }
+    },
+    {
+      "weight": 1,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:elytra"
+      }
+    }
+  ]
+}

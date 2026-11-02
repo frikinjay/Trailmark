@@ -1,0 +1,64 @@
+{
+  "title": "Mekanism",
+  "subtitle": "Energy and chemicals",
+  "icon": "mekanism:basic_energy_cube",
+  "group": "mods",
+  "order": 7,
+  "quests": [
+    {
+      "id": "steel",
+      "title": "Steel",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "mekanism:ingot_steel",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "mekanism:ingot_steel",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Charged Up",
+      "x": 3,
+      "y": 0,
+      "dependencies": "steel",
+      "tags": [
+        "mods"
+      ],
+      "icon": "block:mekanism:basic_energy_cube",
+      "description": "Store 100,000 FE in any block near you: Mekanism, or any other energy mod.",
+      "tasks": [
+        {
+          "type": "energy",
+          "energy": 100000
+        }
+      ]
+    },
+    {
+      "id": "hydrogen",
+      "title": "Splitting Water",
+      "x": 6,
+      "y": 0,
+      "dependencies": "energy",
+      "tags": [
+        "mods",
+        "milestone"
+      ],
+      "icon": "block:mekanism:basic_chemical_tank",
+      "description": "Store 4,000 mB of hydrogen in a tank near you. An electrolytic separator makes it.",
+      "tasks": [
+        {
+          "type": "mekanism_chemical",
+          "chemical": "mekanism:hydrogen",
+          "amount": 4000
+        }
+      ]
+    }
+  ]
+}

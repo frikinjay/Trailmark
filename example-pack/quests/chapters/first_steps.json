@@ -1,0 +1,557 @@
+{
+  "title": "First Steps",
+  "subtitle": "Your first days",
+  "description": "Survival basics, and nearly every task and reward type.",
+  "icon": "minecraft:oak_sapling",
+  "group": "story",
+  "order": 1,
+  "default_shape": "rounded",
+  "rewards": [
+    {
+      "type": "random",
+      "table": "pack:starter_loot",
+      "rolls": 1
+    }
+  ],
+  "decorations": [
+    {
+      "x": 5,
+      "y": -2.5,
+      "width": 6,
+      "height": 0.75,
+      "text": "## Day One"
+    },
+    {
+      "x": 13,
+      "y": -2.5,
+      "width": 6,
+      "height": 0.75,
+      "text": "## Settling In"
+    },
+    {
+      "x": 9,
+      "y": 4.75,
+      "width": 8,
+      "height": 0.75,
+      "text": "&7Pick &lone&r&7 path: the other locks"
+    }
+  ],
+  "quests": [
+    {
+      "id": "logs",
+      "title": "Punch a Tree",
+      "x": 0,
+      "y": 0,
+      "dependencies": "pack:welcome/welcome",
+      "description": "Any kind of log will do.",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:torch",
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "#minecraft:logs",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "id": "workbench",
+      "title": "Workbench",
+      "x": 2,
+      "y": 0,
+      "dependencies": "logs",
+      "rewards": [
+        {
+          "type": "recipe",
+          "recipes": [
+            "minecraft:chest",
+            "minecraft:barrel"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "type": "craft",
+          "item": "minecraft:crafting_table"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Better Tools",
+      "x": 4,
+      "y": 0,
+      "dependencies": "workbench",
+      "sequential": true,
+      "icon": "minecraft:stone_pickaxe",
+      "description": "These tasks unlock **in order**.",
+      "tasks": [
+        {
+          "type": "craft",
+          "item": "minecraft:wooden_pickaxe",
+          "title": "A wooden pickaxe"
+        },
+        {
+          "type": "craft",
+          "item": "minecraft:stone_pickaxe",
+          "title": "Then a stone one"
+        },
+        {
+          "type": "craft",
+          "item": "minecraft:furnace",
+          "title": "And a furnace"
+        }
+      ]
+    },
+    {
+      "id": "stone",
+      "title": "Into the Stone",
+      "x": 6,
+      "y": -1,
+      "dependencies": "tools",
+      "rewards": [
+        {
+          "type": "xp",
+          "levels": 2
+        }
+      ],
+      "tasks": [
+        {
+          "type": "mine",
+          "block": "#minecraft:base_stone_overworld",
+          "count": 64
+        }
+      ]
+    },
+    {
+      "id": "light",
+      "title": "Light It Up",
+      "x": 6,
+      "y": 1,
+      "dependencies": "tools",
+      "icon": "minecraft:torch",
+      "line_style": "straight",
+      "tasks": [
+        {
+          "type": "place",
+          "block": [
+            "minecraft:torch",
+            "minecraft:wall_torch"
+          ],
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "shelter",
+      "title": "A Roof Overhead",
+      "x": 8,
+      "y": 0,
+      "dependencies": [
+        "stone",
+        "light"
+      ],
+      "icon": "block:minecraft:oak_door",
+      "description": "A few walls and a door. See the Builder's Guild chapter for ideas.",
+      "tasks": [
+        {
+          "type": "place",
+          "block": "#minecraft:planks",
+          "count": 48
+        },
+        {
+          "type": "place",
+          "block": "#minecraft:doors",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "night",
+      "title": "Survive the Night",
+      "x": 10,
+      "y": -1,
+      "dependencies": "shelter",
+      "icon": "entity:minecraft:zombie",
+      "shape": "shield",
+      "rewards": [
+        {
+          "type": "effect",
+          "effect": "minecraft:regeneration",
+          "seconds": 30
+        }
+      ],
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "minecraft:zombie",
+          "count": 5
+        },
+        {
+          "type": "kill",
+          "entity": "minecraft:skeleton",
+          "count": 3,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Fishing Trip",
+      "x": 10,
+      "y": 1,
+      "dependencies": "shelter",
+      "icon": "minecraft:fishing_rod",
+      "description": "Progress made before this quest unlocked counts too.",
+      "rewards": [
+        {
+          "type": "loot",
+          "table": "minecraft:gameplay/fishing/treasure"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "stat",
+          "stat": "minecraft:fish_caught",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "iron",
+      "title": "Iron Age",
+      "x": 12,
+      "y": 0,
+      "dependencies": [
+        "night",
+        "food"
+      ],
+      "dependency_mode": "any",
+      "description": "Unlocks after **either** of the two quests before it.",
+      "rewards": [
+        {
+          "type": "random",
+          "table": "pack:starter_loot"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "#c:ingots/iron",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "id": "armor",
+      "title": "Suit Up",
+      "x": 14,
+      "y": -1,
+      "dependencies": "iron",
+      "icon": {
+        "player": "@self",
+        "equipment": {
+          "chest": "minecraft:iron_chestplate",
+          "head": "minecraft:iron_helmet"
+        }
+      },
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_helmet",
+          "slot": "head"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:iron_chestplate"
+        }
+      ]
+    },
+    {
+      "id": "bucket",
+      "title": "Hot Stuff",
+      "x": 14,
+      "y": 1,
+      "dependencies": "iron",
+      "icon": "minecraft:lava_bucket",
+      "description": "Carry a lava bucket.",
+      "tasks": [
+        {
+          "type": "fluid",
+          "fluid": "minecraft:lava",
+          "amount": 1000
+        }
+      ]
+    },
+    {
+      "id": "trader",
+      "title": "Meet the Locals",
+      "x": 16,
+      "y": -1,
+      "dependencies": "armor",
+      "icon": "entity:minecraft:villager",
+      "rewards": [
+        {
+          "type": "command",
+          "command": "give @p minecraft:emerald 3"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "interact",
+          "entity": "minecraft:villager"
+        }
+      ]
+    },
+    {
+      "id": "healthy",
+      "title": "In Good Shape",
+      "x": 16,
+      "y": 1,
+      "dependencies": "bucket",
+      "icon": "minecraft:golden_apple",
+      "optional": true,
+      "description": "Be at full health.",
+      "tasks": [
+        {
+          "type": "player_data",
+          "path": "Health",
+          "compare": "at_least",
+          "value": "20"
+        }
+      ]
+    },
+    {
+      "id": "diamonds",
+      "title": "Diamonds!",
+      "x": 18,
+      "y": 0,
+      "dependencies": [
+        "trader",
+        "healthy"
+      ],
+      "dependency_mode": "at_least",
+      "min_dependencies": 1,
+      "tags": [
+        "milestone"
+      ],
+      "icon": "minecraft:diamond",
+      "size": 1.3,
+      "rewards": [
+        {
+          "type": "choice",
+          "choices": [
+            {
+              "type": "item",
+              "item": "minecraft:diamond_pickaxe"
+            },
+            {
+              "type": "item",
+              "item": "minecraft:diamond",
+              "count": 3,
+              "random_bonus": 2
+            }
+          ]
+        },
+        {
+          "type": "xp",
+          "levels": 5,
+          "exclude_from_claim_all": true
+        }
+      ],
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "minecraft:story/mine_diamond"
+        }
+      ]
+    },
+    {
+      "id": "path_warrior",
+      "title": "Path of the Warrior",
+      "x": 8,
+      "y": 4,
+      "dependencies": "shelter",
+      "exclusive_with": [
+        "path_builder"
+      ],
+      "icon": "minecraft:iron_sword",
+      "shape": "diamond",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:bow"
+        },
+        {
+          "type": "item",
+          "item": "minecraft:arrow",
+          "count": 32
+        }
+      ],
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "#minecraft:skeletons",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "path_builder",
+      "title": "Path of the Builder",
+      "x": 10,
+      "y": 4,
+      "dependencies": "shelter",
+      "exclusive_with": [
+        "path_warrior"
+      ],
+      "icon": "minecraft:stone_bricks",
+      "shape": "diamond",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:scaffolding",
+          "count": 32
+        }
+      ],
+      "tasks": [
+        {
+          "type": "place",
+          "block": "#minecraft:stone_bricks",
+          "count": 64
+        }
+      ]
+    },
+    {
+      "id": "daily_bread",
+      "title": "Daily Bread",
+      "x": 2,
+      "y": 3,
+      "dependencies": "workbench",
+      "repeat": "daily",
+      "icon": "minecraft:wheat",
+      "shape": "hexagon",
+      "hide_dependency_lines": true,
+      "description": "Hand in wheat once a day for emeralds.",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald",
+          "count": 2
+        }
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:wheat",
+          "count": 16,
+          "consume": true
+        }
+      ]
+    },
+    {
+      "id": "bounty",
+      "title": "Bounty Board",
+      "x": 4,
+      "y": 3,
+      "dependencies": "daily_bread",
+      "repeat": {
+        "mode": "cooldown",
+        "cooldown": 600,
+        "max_times": 5
+      },
+      "icon": "minecraft:string",
+      "shape": "hexagon",
+      "description": "Repeatable every 10 minutes, five times.",
+      "rewards": [
+        {
+          "type": "counter",
+          "name": "reputation",
+          "amount": 5
+        },
+        {
+          "type": "xp",
+          "points": 30
+        }
+      ],
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "minecraft:spider",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "speedrun",
+      "title": "Coal Rush",
+      "x": 6,
+      "y": 3,
+      "dependencies": "stone",
+      "time_limit": 600,
+      "icon": "minecraft:coal",
+      "shape": "octagon",
+      "description": "You have **10 minutes** once this unlocks.",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:coal_block",
+          "count": 2
+        }
+      ],
+      "tasks": [
+        {
+          "type": "mine",
+          "block": "#minecraft:coal_ores",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "id": "oops",
+      "title": "Oops",
+      "x": 0,
+      "y": 3,
+      "visibility": "secret",
+      "icon": "minecraft:skeleton_skull",
+      "description": "Everyone dies sometimes.",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:totem_of_undying",
+          "hidden": true
+        }
+      ],
+      "tasks": [
+        {
+          "type": "stat",
+          "stat": "minecraft:deaths",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "xp_bank",
+      "title": "Experienced",
+      "x": 12,
+      "y": 3,
+      "dependencies": "iron",
+      "visibility": "hidden_until_unlocked",
+      "icon": "minecraft:experience_bottle",
+      "tasks": [
+        {
+          "type": "xp",
+          "levels": 10,
+          "consume": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "title": "Sights and Sounds",
+  "subtitle": "Icons, music and video",
+  "description": "Every kind of icon, sounds you can play and pause, and videos that unlock as you go.",
+  "icon": "sound:minecraft:music_disc.cat",
+  "group": "story",
+  "order": 2,
+  "requires": [
+    "pack:welcome"
+  ],
+  "quest_visibility": "visible",
+  "default_shape": "circle",
+  "line_style": "straight",
+  "style": "sights",
+  "decorations": [
+    {
+      "x": 0,
+      "y": -3,
+      "width": 10,
+      "height": 0.75,
+      "text": "## Sights and Sounds",
+      "layer": "front"
+    },
+    {
+      "x": -3,
+      "y": -1.5,
+      "width": 1,
+      "height": 1,
+      "layer": "front",
+      "sound": "minecraft:music_disc.otherside",
+      "volume": 0.35,
+      "loop": true,
+      "autoplay": true
+    },
+    {
+      "x": -3,
+      "y": -0.5,
+      "width": 3,
+      "height": 0.5,
+      "text": "&7Chapter music, click to stop",
+      "layer": "front"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "width": 4,
+      "height": 2.25,
+      "image": "https://www.youtube.com/watch?v=MmB9b5njVbA",
+      "layer": "back",
+      "unlock_after": "fluids"
+    },
+    {
+      "x": 9,
+      "y": 1.6,
+      "width": 4,
+      "height": 0.5,
+      "text": "&7Unlocks after Fluids",
+      "layer": "front"
+    },
+    {
+      "anchor": "music",
+      "x": 0,
+      "y": 1.25,
+      "width": 1,
+      "height": 1,
+      "layer": "front",
+      "sound": "minecraft:block.note_block.bell"
+    },
+    {
+      "x": 4.5,
+      "y": 3.5,
+      "width": 3,
+      "height": 0.5,
+      "rotation": -6,
+      "text": "&6Tilted labels work too",
+      "layer": "front",
+      "link": "quest:pack:sights_and_sounds/structures"
+    }
+  ],
+  "quests": [
+    {
+      "id": "music",
+      "title": "Press Play",
+      "x": 0,
+      "y": 0,
+      "icon": "sound:minecraft:music_disc.cat",
+      "size": 1.2,
+      "description": [
+        "A quest's icon can be a **sound**. Its player sits right here: play, pause, stop and drag the bar to skip.",
+        "Sound IDs, OGG files in the pack's `media/` folder and links all work. MP3 and FLAC need FFmpeg, which the book offers to download."
+      ],
+      "tasks": [
+        {
+          "type": "checkmark",
+          "title": "Listened"
+        }
+      ]
+    },
+    {
+      "id": "fluids",
+      "title": "Fluids",
+      "x": 2,
+      "y": 0,
+      "dependencies": "music",
+      "icon": "fluid:minecraft:lava",
+      "description": "Fluids show with their own texture and colour, so modded fluids without a bucket still look right.",
+      "tasks": [
+        {
+          "type": "fluid",
+          "fluid": "minecraft:lava",
+          "amount": 1000
+        }
+      ]
+    },
+    {
+      "id": "trailer",
+      "title": "Movie Night",
+      "x": 4,
+      "y": 0,
+      "dependencies": "fluids",
+      "icon": "https://www.youtube.com/watch?v=MmB9b5njVbA",
+      "shape": "square",
+      "description": "A video icon gets a **Watch Video** button once the quest unlocks. The player can go full screen.",
+      "tasks": [
+        {
+          "type": "checkmark",
+          "title": "Watched it"
+        }
+      ]
+    },
+    {
+      "id": "structures",
+      "title": "Structures",
+      "x": 6,
+      "y": 0,
+      "dependencies": "trailer",
+      "icon": {
+        "structure": "minecraft:igloo/top",
+        "yaw": 200,
+        "pitch": 25
+      },
+      "size": 1.6,
+      "tags": [
+        "milestone"
+      ],
+      "description": "Structures draw as they generate in the world, without structure or jigsaw blocks.",
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "minecraft:igloo"
+        }
+      ]
+    },
+    {
+      "id": "guardian",
+      "title": "The Guardian",
+      "x": 2,
+      "y": 2,
+      "dependencies": "music",
+      "optional": true,
+      "icon": {
+        "entity": "minecraft:warden",
+        "nbt": {
+          "CustomName": "'\"Guardian\"'"
+        },
+        "play": "roar",
+        "yaw": 30
+      },
+      "description": "Mob icons can carry NBT and play any of their animations by name.",
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "minecraft:warden"
+        }
+      ]
+    },
+    {
+      "id": "champion",
+      "title": "Champion",
+      "x": 0,
+      "y": 2,
+      "dependencies": "music",
+      "optional": true,
+      "icon": {
+        "player": "Notch",
+        "equipment": {
+          "head": "minecraft:diamond_helmet",
+          "mainhand": "minecraft:diamond_sword"
+        },
+        "pose": {
+          "right_arm": [
+            -110,
+            0,
+            10
+          ]
+        },
+        "spin": 0
+      },
+      "description": "Player models take a skin from any username, armour, held items and a pose.",
+      "tasks": [
+        {
+          "type": "checkmark",
+          "title": "Suited up"
+        }
+      ]
+    },
+    {
+      "id": "relic",
+      "title": "Old Relic",
+      "x": 4,
+      "y": 2,
+      "dependencies": "fluids",
+      "sequential": true,
+      "style": "relic",
+      "icon": {
+        "item": {
+          "id": "minecraft:golden_apple",
+          "components": {
+            "minecraft:enchantment_glint_override": true
+          }
+        }
+      },
+      "description": "Item icons can have components, here an enchantment glint. This one also asks you to **eat** a golden apple.",
+      "tasks": [
+        {
+          "type": "use",
+          "item": "minecraft:golden_apple"
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "title": "Raise the Banner",
+      "x": 6,
+      "y": 2,
+      "dependencies": "structures",
+      "hint": "Any banner counts.",
+      "icon": {
+        "block": "minecraft:white_banner{patterns:[{pattern:\"minecraft:stripe_top\",color:\"red\"}]}",
+        "yaw": 205
+      },
+      "description": "Blocks take states and block entity data, like this banner's pattern.",
+      "tasks": [
+        {
+          "type": "place",
+          "block": "#minecraft:banners",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

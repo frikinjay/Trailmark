@@ -1,0 +1,33 @@
+{
+  "title": "Trailmark Showcase",
+  "icon": "trailmark:quest_book",
+  "claim_mode": "player",
+  "auto_claim": false,
+  "show_lock_icons": true,
+  "locked_message": "Finish the quests leading here first.",
+  "start_chapter": "pack:welcome",
+  "line_style": "elbow",
+  "youtube_volume": 40,
+  "groups": [
+    {
+      "id": "story",
+      "title": "Story",
+      "icon": "minecraft:writable_book"
+    },
+    {
+      "id": "world",
+      "title": "World",
+      "icon": "minecraft:filled_map"
+    },
+    {
+      "id": "events",
+      "title": "Events",
+      "icon": "minecraft:cake"
+    },
+    {
+      "id": "mods",
+      "title": "Mods",
+      "icon": "minecraft:comparator"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Community",
+  "subtitle": "Signals, stages and counters",
+  "icon": "minecraft:bell",
+  "group": "world",
+  "order": 2,
+  "quests": [
+    {
+      "id": "guide",
+      "title": "Talk to the Guide",
+      "x": 0,
+      "y": 0,
+      "icon": "entity:minecraft:villager",
+      "description": [
+        "Completed by a signal from a command block, a script (KubeJS) or another mod:",
+        "`/trailmark signal @s talked_to_guide`"
+      ],
+      "rewards": [
+        {
+          "type": "counter",
+          "name": "reputation",
+          "amount": 10
+        },
+        {
+          "type": "stage",
+          "stage": "trusted"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "custom",
+          "name": "talked_to_guide"
+        }
+      ]
+    },
+    {
+      "id": "trusted",
+      "title": "A Trusted Friend",
+      "x": 3,
+      "y": 0,
+      "dependencies": "guide",
+      "icon": "minecraft:emerald",
+      "description": "Stage tasks check Trailmark's own stages, FTB Teams stages and KubeJS stages. The Guide quest's reward set this one.",
+      "tasks": [
+        {
+          "type": "stage",
+          "stage": "trusted"
+        }
+      ]
+    },
+    {
+      "id": "reputation",
+      "title": "Well Known",
+      "x": 6,
+      "y": 0,
+      "dependencies": "trusted",
+      "icon": "minecraft:name_tag",
+      "description": "Earn reputation from the Guide and the repeatable Bounty Board quest.",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:emerald_block",
+          "claim": "team"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "counter",
+          "name": "reputation",
+          "value": 30
+        }
+      ]
+    }
+  ]
+}

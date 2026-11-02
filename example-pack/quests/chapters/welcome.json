@@ -1,0 +1,269 @@
+{
+  "quests": [
+    {
+      "tasks": [
+        {
+          "type": "checkmark",
+          "id": "0",
+          "title": "I've had a look around"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:bread",
+          "count": 8,
+          "id": "0"
+        },
+        {
+          "type": "toast",
+          "message": "Off you go!",
+          "id": "1"
+        }
+      ],
+      "size": 1.25,
+      "icon": "player:@self",
+      "id": "welcome",
+      "title": "Welcome!",
+      "description": [
+        "# {lang:showcase.greeting}",
+        "This book shows off **everything Trailmark can do**. Every chapter is a real quest line you can play.",
+        "",
+        "![Trailmark](media/banner.png){width=220}",
+        "",
+        "## Text",
+        "**Bold**, *italic*, __underlined__, ~~struck~~, `code`, a ||spoiler|| and &aclassic &bcolour &dcodes&r, even &#FF9A3Chex colours&r.",
+        "",
+        "> Quotes look like this.",
+        "",
+        "- Lists",
+        "  - nest by indenting",
+        "1. and can be numbered",
+        "",
+        "| Key | Does |",
+        "|---|---|",
+        "| <kbd>N</kbd> | Opens this book |",
+        "| <kbd>H</kbd> | Shows or hides the tracker |",
+        "| <kbd>T</kbd> | Tracks the selected quest |",
+        "",
+        "## Things in text",
+        "Hover an item, then press <kbd>R</kbd> or <kbd>U</kbd> for recipes: <item id=\"minecraft:crafting_table\"/> <item id=\"minecraft:iron_pickaxe\"/> <item id=\"minecraft:bread\" count=\"16\"/>",
+        "",
+        "<div style=\"display: flex; gap: 8px\"><entity type=\"minecraft:camel\" animation=\"walk\" yaw=\"40\" size=\"48\"/><block id=\"minecraft:blast_furnace[lit=true]\" size=\"40\"/><player name=\"@self\" mainhand=\"minecraft:diamond_sword\" pose='{\"right_arm\": [-110, 0, 0]}' size=\"48\"/></div>",
+        "",
+        "<details><summary>Click to open a hidden section</summary>Details sections keep long explanations tidy.</details>",
+        "",
+        "<div class=\"callout\">The pack's style.css styles this call-out. Links work too: [the next quest](quest:pack:welcome/tracking) or [the First Steps chapter](chapter:pack:first_steps).</div>",
+        "",
+        "&7&o- {lang:showcase.signature}"
+      ]
+    },
+    {
+      "tasks": [
+        {
+          "type": "checkmark",
+          "id": "0",
+          "title": "Got it"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "xp",
+          "points": 50,
+          "id": "0"
+        }
+      ],
+      "dependencies": "welcome",
+      "x": 3.0,
+      "icon": "minecraft:compass",
+      "hint": "Try tracking the Into the World chapter's quests next.",
+      "id": "tracking",
+      "title": "Tracking Quests",
+      "description": [
+        "Select a quest and press <kbd>T</kbd> to **track** it. Tracked quests show on the HUD, with a compass arrow for places to visit.",
+        "Press <kbd>H</kbd> to hide or show the tracker; it remembers your choice.",
+        "",
+        "![Compass](media/compass.gif){width=32}"
+      ]
+    },
+    {
+      "tasks": [
+        {
+          "type": "checkmark",
+          "id": "0",
+          "title": "Watched it"
+        }
+      ],
+      "optional": true,
+      "dependencies": "welcome",
+      "x": 3.0,
+      "y": -1.75,
+      "shape": "circle",
+      "icon": "minecraft:painting",
+      "id": "video",
+      "title": "Watch a Video",
+      "description": [
+        "YouTube videos play right here, with the same controls as every other video. Your volume is remembered across videos.",
+        "",
+        "<youtube src=\"https://www.youtube.com/watch?v=MmB9b5njVbA\" title=\"Minecraft trailer\" volume=\"35\">",
+        "",
+        "Markdown pictures with a YouTube link work too, and can start at a time:",
+        "",
+        "![The trailer, from 0:30](https://www.youtube.com/watch?v=MmB9b5njVbA&t=30)"
+      ]
+    },
+    {
+      "tasks": [
+        {
+          "type": "checkmark",
+          "id": "0",
+          "title": "Opened it"
+        }
+      ],
+      "optional": true,
+      "dependencies": "welcome",
+      "x": 3.0,
+      "y": 1.75,
+      "shape": "circle",
+      "icon": "minecraft:enchanted_book",
+      "id": "guide",
+      "title": "Read the Guide",
+      "description": [
+        "Links can open Patchouli books, entries and pages:",
+        "",
+        "[Open the Showcase Guide](patchouli:showcase:guide#showcase:basics/welcome)",
+        "",
+        "&7(Add trailmark-showcase-datapack.zip from the run folder when creating the world.)"
+      ]
+    },
+    {
+      "tasks": [
+        {
+          "type": "checkmark",
+          "id": "0",
+          "title": "Let's go"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "choice",
+          "choices": [
+            {
+              "type": "item",
+              "item": "minecraft:iron_sword",
+              "id": "0"
+            },
+            {
+              "type": "item",
+              "item": "minecraft:iron_pickaxe",
+              "id": "1"
+            },
+            {
+              "type": "item",
+              "item": "minecraft:shield",
+              "id": "2"
+            }
+          ],
+          "id": "0"
+        }
+      ],
+      "dependencies": "tracking",
+      "x": 6.0,
+      "size": 1.4,
+      "shape": "star",
+      "icon": "minecraft:nether_star",
+      "tags": [
+        "milestone"
+      ],
+      "id": "ready",
+      "title": "Ready for Adventure",
+      "description": "Milestones stand out on the map. This one also has a **glow decoration** anchored to it."
+    }
+  ],
+  "decorations": [
+    {
+      "text": "## Welcome to Trailmark",
+      "layer": "front",
+      "x": 3.0,
+      "y": -3.5,
+      "width": 9.0,
+      "height": 0.75
+    },
+    {
+      "anchor": "ready",
+      "image": "media/glow.png",
+      "width": 3.0,
+      "height": 3.0
+    },
+    {
+      "icon": {
+        "equipment": {
+          "mainhand": "minecraft:diamond_sword"
+        },
+        "pose": {
+          "head": [
+            5.0,
+            15.0,
+            0.0
+          ],
+          "right_arm": [
+            -15.0,
+            0.0,
+            20.0
+          ]
+        },
+        "player": "mojang",
+        "yaw": 25.0,
+        "spin": 0.0,
+        "animation": "frozen"
+      },
+      "x": -2.5,
+      "y": -0.5,
+      "width": 24.5,
+      "height": 20.8125
+    },
+    {
+      "visible_after": "pack:welcome/tracking",
+      "text": "&7Finish everything for a cake",
+      "x": 6.0,
+      "y": 2.25,
+      "width": 4.0,
+      "height": 0.75
+    },
+    {
+      "sound": "https://raw.githubusercontent.com/frikinjay/sanctum/refs/heads/main/music/bg.mp3",
+      "layer": "front",
+      "x": -0.061658144,
+      "y": 2.5732346
+    },
+    {
+      "video_sound": true,
+      "image": "https://test-videos.co.uk/vids/bigbuckbunny/mkv/720/Big_Buck_Bunny_720_10s_2MB.mkv",
+      "x": 4.5,
+      "y": 5.0,
+      "width": 6.0,
+      "height": 3.5
+    },
+    {
+      "video_sound": true,
+      "image": "https://www.youtube.com/watch?v=irVNGjRFZGk",
+      "x": 12.5,
+      "y": 5.0,
+      "width": 8.0,
+      "height": 4.75
+    }
+  ],
+  "rewards": [
+    {
+      "type": "item",
+      "item": "minecraft:cake",
+      "id": "0"
+    }
+  ],
+  "group": "story",
+  "background": "https://i.ibb.co/WvB5tFvc/bg.png",
+  "title": "Welcome",
+  "subtitle": "Start here",
+  "description": "A tour of the quest book itself.",
+  "icon": "trailmark:quest_book"
+}

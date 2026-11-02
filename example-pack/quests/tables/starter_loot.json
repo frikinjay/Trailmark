@@ -1,0 +1,39 @@
+{
+  "title": "Starter Cache",
+  "icon": "minecraft:barrel",
+  "rolls": 2,
+  "empty_weight": 1,
+  "entries": [
+    {
+      "weight": 6,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:bread",
+        "count": 6
+      }
+    },
+    {
+      "weight": 4,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:iron_ingot",
+        "count": 3
+      }
+    },
+    {
+      "weight": 2,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:emerald",
+        "count": 2
+      }
+    },
+    {
+      "weight": 1,
+      "reward": {
+        "type": "item",
+        "item": "minecraft:diamond"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "title": "Accessories",
+  "subtitle": "Curios",
+  "icon": "minecraft:gold_nugget",
+  "group": "mods",
+  "order": 3,
+  "quests": [
+    {
+      "id": "ring",
+      "title": "A Lucky Ring",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:gold_nugget",
+      "description": "This reward goes straight into your ring slot.",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:gold_nugget",
+          "slot": "curios:ring"
+        },
+        {
+          "type": "extra_slots",
+          "slot": "ring",
+          "amount": 1
+        }
+      ],
+      "tasks": [
+        {
+          "type": "checkmark",
+          "title": "Take the ring"
+        }
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "Wear It Proudly",
+      "x": 3,
+      "y": 0,
+      "dependencies": "ring",
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:gold_nugget",
+      "description": "Worn accessories count for item tasks.",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:gold_nugget"
+        }
+      ]
+    }
+  ]
+}

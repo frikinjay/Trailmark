@@ -1,0 +1,117 @@
+{
+  "title": "Cobblemon",
+  "subtitle": "Gotta track 'em all",
+  "icon": "cobblemon:poke_ball",
+  "group": "mods",
+  "order": 4,
+  "default_shape": "circle",
+  "quests": [
+    {
+      "id": "first_catch",
+      "title": "First Catch",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "cobblemon:poke_ball",
+      "rewards": [
+        {
+          "type": "item",
+          "item": "cobblemon:poke_ball",
+          "count": 10
+        }
+      ],
+      "tasks": [
+        {
+          "type": "pokemon",
+          "action": "catch",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "title": "Making a Splash",
+      "x": 3,
+      "y": -1,
+      "dependencies": "first_catch",
+      "tags": [
+        "mods"
+      ],
+      "icon": "cobblemon:great_ball",
+      "tasks": [
+        {
+          "type": "pokemon",
+          "action": "catch",
+          "properties": "type=water",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "battle",
+      "title": "Battle Ready",
+      "x": 3,
+      "y": 1,
+      "dependencies": "first_catch",
+      "tags": [
+        "mods"
+      ],
+      "icon": "cobblemon:ultra_ball",
+      "tasks": [
+        {
+          "type": "pokemon",
+          "action": "defeat",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "evolve",
+      "title": "Growing Up",
+      "x": 6,
+      "y": 0,
+      "dependencies": [
+        "water",
+        "battle"
+      ],
+      "tags": [
+        "mods"
+      ],
+      "icon": "cobblemon:rare_candy",
+      "tasks": [
+        {
+          "type": "pokemon",
+          "action": "evolve",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "dex",
+      "title": "Researcher",
+      "x": 9,
+      "y": 0,
+      "dependencies": "evolve",
+      "tags": [
+        "mods",
+        "milestone"
+      ],
+      "icon": "cobblemon:pokedex_red",
+      "rewards": [
+        {
+          "type": "pokemon",
+          "properties": "eevee level=5"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "pokedex",
+          "count": 10,
+          "caught": true
+        }
+      ]
+    }
+  ]
+}

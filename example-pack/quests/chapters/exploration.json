@@ -1,0 +1,231 @@
+{
+  "quests": [
+    {
+      "tasks": [
+        {
+          "type": "location",
+          "z": 0,
+          "radius": 24,
+          "ignore_y": true,
+          "x": 0,
+          "y": 64,
+          "id": "0"
+        }
+      ],
+      "icon": "minecraft:compass",
+      "id": "origin",
+      "title": "Back to the Start",
+      "description": "Track this quest: the tracker points the way, and JourneyMap or Xaero's Minimap shows a waypoint."
+    },
+    {
+      "tasks": [
+        {
+          "type": "biome",
+          "biome": "#minecraft:spawns_snow_foxes",
+          "id": "0"
+        }
+      ],
+      "dependencies": "origin",
+      "x": 3.0,
+      "y": -2.0,
+      "icon": "minecraft:snowball",
+      "id": "snowy",
+      "title": "Cold Feet"
+    },
+    {
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "#minecraft:village",
+          "id": "0"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "random",
+          "table": "pack:explorer_cache",
+          "id": "0"
+        }
+      ],
+      "dependencies": "origin",
+      "x": 3.0,
+      "icon": "minecraft:bell",
+      "id": "village",
+      "title": "Signs of Life"
+    },
+    {
+      "tasks": [
+        {
+          "type": "biome",
+          "biome": "#minecraft:is_ocean",
+          "id": "0"
+        }
+      ],
+      "dependencies": "origin",
+      "x": 3.0,
+      "y": 2.0,
+      "icon": "minecraft:oak_boat",
+      "id": "ocean",
+      "title": "Open Water"
+    },
+    {
+      "tasks": [
+        {
+          "type": "dimension",
+          "dimension": "minecraft:the_nether",
+          "id": "0"
+        }
+      ],
+      "dependencies": [
+        "snowy",
+        "village",
+        "ocean"
+      ],
+      "dependency_mode": "at_least",
+      "min_dependencies": 2,
+      "x": 6.0,
+      "shape": "square",
+      "icon": "block:minecraft:nether_portal",
+      "id": "portal",
+      "title": "Through the Portal",
+      "description": "Unlocks after any **two** of the three quests before it."
+    },
+    {
+      "tasks": [
+        {
+          "type": "structure",
+          "structure": "minecraft:fortress",
+          "id": "0"
+        },
+        {
+          "type": "kill",
+          "entity": "minecraft:blaze",
+          "count": 6,
+          "id": "1"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:ender_pearl",
+          "count": 6,
+          "id": "0"
+        }
+      ],
+      "dependencies": "portal",
+      "x": 9.0,
+      "shape": "square",
+      "icon": "minecraft:blaze_rod",
+      "id": "fortress",
+      "title": "Nether Fortress"
+    },
+    {
+      "tasks": [
+        {
+          "type": "dimension",
+          "dimension": "minecraft:the_end",
+          "id": "0"
+        },
+        {
+          "type": "kill",
+          "entity": "minecraft:ender_dragon",
+          "id": "1"
+        }
+      ],
+      "rewards": [
+        {
+          "type": "item",
+          "item": "minecraft:elytra",
+          "id": "0"
+        },
+        {
+          "type": "advancement",
+          "advancement": "minecraft:end/kill_dragon",
+          "id": "1"
+        }
+      ],
+      "dependencies": "fortress",
+      "x": 12.0,
+      "size": 1.5,
+      "icon": {
+        "animation_speed": 0.26,
+        "play": "flap",
+        "yaw": 328.0,
+        "pitch": -20.0,
+        "spin": 0.0,
+        "entity": "minecraft:ender_dragon",
+        "scale": 3.0
+      },
+      "tags": [
+        "milestone"
+      ],
+      "id": "the_end",
+      "title": "The End"
+    }
+  ],
+  "decorations": [
+    {
+      "icon": {
+        "structure": "minecraft:igloo/top",
+        "pitch": 30.0,
+        "spin": 12.0
+      },
+      "anchor": "snowy",
+      "y": -2.25,
+      "width": 2.5,
+      "height": 2.0
+    },
+    {
+      "icon": {
+        "structure": "minecraft:village/plains/houses/plains_small_house_1",
+        "pitch": 30.0,
+        "spin": 10.0
+      },
+      "anchor": "village",
+      "x": 2.75,
+      "width": 3.0,
+      "height": 2.5
+    },
+    {
+      "icon": {
+        "structure": "minecraft:shipwreck/rightsideup_full",
+        "pitch": 25.0,
+        "spin": 8.0
+      },
+      "anchor": "ocean",
+      "y": 2.5,
+      "width": 3.5,
+      "height": 2.0
+    },
+    {
+      "icon": {
+        "structure": "minecraft:ruined_portal/portal_1",
+        "pitch": 20.0,
+        "spin": 10.0
+      },
+      "anchor": "portal",
+      "y": -2.5,
+      "width": 2.5,
+      "height": 2.5
+    },
+    {
+      "icon": {
+        "structure": "minecraft:end_city/ship",
+        "pitch": 25.0,
+        "spin": 6.0
+      },
+      "anchor": "the_end",
+      "visible_after": "pack:exploration/fortress",
+      "x": 2.5,
+      "y": -2.5,
+      "width": 5.0,
+      "height": 3.5
+    }
+  ],
+  "line_style": "straight",
+  "default_shape": "circle",
+  "group": "world",
+  "title": "Into the World",
+  "subtitle": "Biomes, structures and dimensions",
+  "icon": "minecraft:filled_map"
+}

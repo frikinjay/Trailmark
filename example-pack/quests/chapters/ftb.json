@@ -1,0 +1,69 @@
+{
+  "title": "FTB Teams and Chunks",
+  "subtitle": "Claim your land",
+  "icon": "minecraft:white_banner",
+  "group": "mods",
+  "order": 5,
+  "quests": [
+    {
+      "id": "team",
+      "title": "Form a Team",
+      "x": 0,
+      "y": 0,
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:white_banner",
+      "description": "With FTB Teams installed, progress is shared by your FTB team. Use `/ftbteams party create <name>`.",
+      "tasks": [
+        {
+          "type": "checkmark",
+          "title": "I've made or joined a team"
+        }
+      ]
+    },
+    {
+      "id": "claim",
+      "title": "Stake a Claim",
+      "x": 3,
+      "y": 0,
+      "dependencies": "team",
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:filled_map",
+      "description": "Claim chunks on the FTB Chunks map.",
+      "rewards": [
+        {
+          "type": "extra_chunks",
+          "claim": 8,
+          "force_load": 2
+        }
+      ],
+      "tasks": [
+        {
+          "type": "claim_chunks",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "force",
+      "title": "Always Loaded",
+      "x": 6,
+      "y": 0,
+      "dependencies": "claim",
+      "tags": [
+        "mods"
+      ],
+      "icon": "minecraft:lodestone",
+      "tasks": [
+        {
+          "type": "claim_chunks",
+          "count": 1,
+          "force_loaded": true
+        }
+      ]
+    }
+  ]
+}
