@@ -17,6 +17,7 @@ Optional extras in [`extras/`](extras):
 - `trailmark-showcase-datapack.zip`: a Patchouli guide book and a Curios ring slot used by two quests. Add it as a
   data pack when you create the world.
 - `trailmark-showcase-resourcepack`: the text for that Patchouli book. Put it in `resourcepacks` and turn it on.
+- `themes/vanilla.css`: a lighter restyle in Minecraft's own menu colours. Copy it over `quests/style.css` to try it.
 
 ## What's inside
 
@@ -55,6 +56,7 @@ chapter). Videos and MP3 music need FFmpeg; when it's missing, the quest book of
 - `tables/`: reward tables used by the loot rewards.
 - `lang/en_us.json`: translatable text used through `{lang:...}`.
 - `media/`: pictures and animations the quests use.
-- `style.css`: the pack's own look on top of Trailmark's theme.
+- `style.css`: the pack's own look, which turns the whole book into the Nether. Its background,
+  `media/nether_update.jpg`, is Mojang's official Nether Update wallpaper from minecraft.net.
 
 Every field is explained in [`DOCUMENTATION.md`](../DOCUMENTATION.md).

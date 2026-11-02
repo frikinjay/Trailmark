@@ -1,4 +1,4 @@
-![Trailmark banner. On the left, the Trailmark icon (a green folded map with a gold pin), the name TRAILMARK in large blocky white letters, a short gold rule, the line "A quest book you can restyle from top to bottom, with 3D icons and built-in sound and video." and two tags, Fabric and NeoForge. On the right, a screenshot of the quest book in its default dark teal theme, open on the Welcome chapter: chapter tabs along the top, a chapter list with progress on the left, a map of linked quests in the middle, and an open quest page on the right with formatted text, a picture, a quote, a list, a small table of keys and a gold Claim Rewards button.](CF_HERO_URL)
+![Trailmark banner. On the left, the Trailmark icon (a green folded map with a gold pin), the name TRAILMARK in large blocky white letters, a short gold rule, the line "A quest book you can restyle from top to bottom, with 3D icons and built-in sound and video." and two tags, Fabric and NeoForge. On the right, a screenshot of the quest book in its default dark teal theme, open on the Welcome chapter: chapter tabs along the top, a chapter list with progress on the left, a map of linked quests in the middle, and an open quest page on the right with formatted text, a picture, a quote, a list, a small table of keys and a gold Claim Rewards button.](https://media.forgecdn.net/attachments/2138/245/hero-png.png)
 
 > **Trailmark** is a quest book for Fabric and NeoForge. Chapters are laid out as maps, quest pages hold proper formatted text, and the book's whole look comes from stylesheets that packs, servers and players can each replace.
 
@@ -20,7 +20,7 @@ Videos open in a player with full screen and keyboard controls, or play right on
 
 ---
 
-![03, Themes: "Restyle all of it". Text: "One CSS file styles the whole book, from colours and fonts to quest shapes. Below, the chapter from above in a vanilla theme." Left screenshot, captioned "Vanilla theme: slot-style quests in Minecraft's colours", shows the same Sights and Sounds chapter restyled with grey stone panels, square inventory-slot quests, yellow headings and green buttons. Right screenshot, captioned "Quest page: text styles follow the theme", is a close-up of the Welcome quest page in that theme, with a yellow "Welcome, traveller!" heading, a yellow-framed icon and coloured sample text.](https://media.forgecdn.net/attachments/2138/185/themes-png.png)
+![03, Themes: "Restyle all of it". Text: "One stylesheet can rebuild the whole book. Here, the chapter from above becomes the Nether." Left screenshot, captioned "Nether theme: Mojang's wallpaper, brick panels, hexagon quests", shows the same Sights and Sounds chapter completely restyled: the official Nether Update wallpaper of a crimson cavern with lava falls and warped fungus fills the background, the panels are dark nether brick with orange trim, the quests are hexagons glowing lava orange and gold, and the headings are orange. Right screenshot, captioned "Quest page: text styles follow too", is a close-up of the Welcome quest page in that theme, with an orange "Text" heading, coloured sample text, an orange-edged quote, lists, a key table with gold headers and a molten-gold Claim Rewards button.](https://media.forgecdn.net/attachments/2138/293/themes-png.png)
 
 | What you can style | How |
 |---|---|
@@ -31,7 +31,7 @@ Videos open in a player with full screen and keyboard controls, or play right on
 | Where themes come from | Resource packs, the quest pack (servers send theirs on join), and each player's own `style.css` |
 | Players who'd rather keep their look | **Prefer My Style** puts their theme above the server's |
 
-The vanilla theme above ships with the [example pack](https://github.com/frikinjay/Trailmark/tree/main/example-pack), so you can start from it.
+The Nether theme above ships with the [example pack](https://github.com/frikinjay/Trailmark/tree/main/example-pack), along with a lighter vanilla-style theme, so you can start from either.
 
 ---
 
