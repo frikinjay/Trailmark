@@ -332,7 +332,7 @@ Without any `z`, older packs look as they always did: decorations with `"layer":
 
 #### Videos and Sounds
 
-A decoration's `image` can be a video (`media/intro.mp4`, `.webm` and the other formats FFmpeg reads, or a link). It never starts by itself: it shows its first frame with a play button, and clicking it opens the video player: a window over the book with the video's sound, play/pause, stop, a seek bar, a volume slider with a mute button and **Full Screen** (keys: **Space** play/pause, **F** full screen, **M** mute, **Left**/**Right** jump five seconds, **Esc** close). With `video_sound` it plays right on the map instead, with a control bar along its bottom (seek bar, play/pause, time, volume and a button for the big player) that shows while the mouse is over it. Sound players (a quest's sound, the Now Playing bar over the map) have a volume slider too. Volume picked with a slider multiplies the `volume` the pack set, and lasts until the game closes. Sounds are their own fields:
+A decoration's `image` can be a video (`media/intro.mp4`, `.webm`, `.mkv`, `.mov`, `.m4v`, `.avi`, `.flv`, or a link). It never starts by itself: it shows its first frame with a play button, and clicking it opens the video player: a window over the book with the video's sound, play/pause, stop, a seek bar, a volume slider with a mute button and **Full Screen** (keys: **Space** play/pause, **F** full screen, **M** mute, **Left**/**Right** jump five seconds, **Esc** close). With `video_sound` it plays right on the map instead, with a control bar along its bottom (seek bar, play/pause, time, volume and a button for the big player) that shows while the mouse is over it. Sound players (a quest's sound, the Now Playing bar over the map) have a volume slider too. Volume picked with a slider multiplies the `volume` the pack set, and lasts until the game closes. Sounds are their own fields:
 
 ```json
 { "x": 4, "y": 1, "width": 1, "height": 1, "sound": "media/theme.ogg", "volume": 0.6, "loop": true, "autoplay": true }
@@ -341,11 +341,11 @@ A decoration's `image` can be a video (`media/intro.mp4`, `.webm` and the other 
 
 | Field | Meaning |
 |---|---|
-| `sound` | Played when the decoration is clicked: a sound ID (`minecraft:music_disc.cat`, or one from a resource pack's `sounds.json`), an OGG or WAV file (`media/theme.ogg`, a link or a resource pack path), or MP3, FLAC, M4A, Opus and similar when FFmpeg is installed. |
+| `sound` | Played when the decoration is clicked: a sound ID (`minecraft:music_disc.cat`, or one from a resource pack's `sounds.json`), or a sound file: OGG, WAV, MP3, FLAC, M4A, AAC, Opus or AIFF (`media/theme.ogg`, a link or a resource pack path). |
 | `volume` | 0 to 1, on top of the player's **Jukebox/Note Blocks** volume. |
 | `loop` | Keep playing until clicked again. |
 | `autoplay` | Start the sound when the chapter opens: chapter music or ambience. Videos never start by themselves. Map sounds stop when the player switches chapter or closes the book. |
-| `video_sound` | With a video `image`, clicking plays and pauses it right on the map with its own sound (needs FFmpeg), instead of opening the video player. The video player always plays it. |
+| `video_sound` | With a video `image`, clicking plays and pauses it right on the map with its own sound, instead of opening the video player. The video player always plays it. |
 | `unlock_after` | A quest that must be completed first. Until then the decoration shows a lock and its sound or video can't be played. |
 
 A decoration that is only a sound shows as a round play button; one with a picture or text gets a small speaker badge. While a sound plays away from its own player, a **Now Playing** bar at the bottom of the map has play/pause, stop and a seek bar (click or drag it). A quest's sound keeps going when the player closes its panel or moves to another chapter, so the bar stays useful; starting another quest's sound replaces it, and closing the book stops everything. Sound IDs are traced to their sound file, so they get the same controls. In the editor, right-click the map for **New Video** and **New Sound**, and right-click a decoration to preview its sound. Sound files and videos go through [the same media route](#how-media-reaches-players) as pictures; playback uses Dungeon Config's sound engine.
@@ -570,7 +570,7 @@ Every Trailmark screen, popup, tooltip and the HUD share one set of colours. Cha
 | `palette` | `text-color`, `label-color`, `dim-color`, `faint-color`, `accent-color` (the gold accent), `accent-light-color`, `accent-dark-color`, `line-color`, `line-light-color`, `hover-color`, `shadow-color` |
 | `backdrop` | `top-color`, `bottom-color`, `grid-color`, `trail-color`, `vignette-color` (the dark sides), `vignette-bottom-color`, `vignette-size` (how far in, a share of the width, 0 to 0.5; 0 turns it off). Set `background-image` (a picture, GIF, gradient, or a video, which stays on its first frame) to replace the trail map entirely; add `trails: true` to keep the trails on top. |
 | `topbar` | `top-color`, `bottom-color` |
-| `card` | `background-color` (details panel, editor windows, tracker, toasts) |
+| `card` | `background-color` (details panel, editor windows, toasts) |
 | `row` | `background-color`, `hover-color`, `selected-color` |
 | `field` | `background-color` |
 | `chip` | `background-color`, `border-color`, `color` (key hints) |
@@ -595,7 +595,7 @@ Each part below has its own element, on top of the colours above. Anything you l
 | `title` | `color`, `shadow-color` |
 | `group` (the tabs) | `color`, `hover-color`, `selected-color`, `hover-background-color`, `accent-color`, `accent-light-color`, `glow-color`, `padding` [2 to 40], `underline-duration` |
 | `claim-all` | `background-color`, `hover-background-color`, `border-color`, `hover-border-color`, `color`, `icon-color`, `shadow-color`, `pulse-duration` |
-| `footer` | `height`, `top-color`, `bottom-color`, `notice-color` (the FFmpeg download status) |
+| `footer` | `height`, `top-color`, `bottom-color` |
 | `save-status` (edit mode, by the Save hint) | `color` (saved), `unsaved-color`, `error-color` (read only), `pulse-color`, `pulse-duration` |
 | `search` | `height` [up to 48], `background-color`, `border-color`, `hover-border-color`, `focus-border-color`, `color` (the magnifier), `focus-color`, `text-color`, `hint-color`, `caret-color` |
 | `search-results` (the drop-down; quest states such as `:completed`) | `background-color`, `border-color`, `hover-color`, `color`, `dim-color` (the chapter name) |
@@ -698,7 +698,7 @@ legend { body-font-family: minecraft-ten; }        /* one kind of text */
 button { bold-font-family: fancy-bold; }
 ```
 
-`font-family` sets all of an element's text; `title-font-family`, `heading-font-family`, `body-font-family` and `value-font-family` set one kind; `bold-font-family` sets bold words (in quest text, bold follows the font: `<name>-bold`). Inner elements inherit what outer ones set, as in CSS. Bold words in a custom font use `<name>-bold` (or `<name>_bold`) when you ship one, otherwise the font itself. Built-in names: `sanctum`, `sanctum-bold` and `minecraft-ten`. `fonts.json` can size named fonts too (`{ "fancy": { "pixelSize": 8 } }`). It works for every part of the quest book, its popups, editors and tooltips, and for quest text (`p`, `h1`, `li`...). Toast headings and the tracker's chapter headings use the title font (Minecraft Ten), so `toast` and `tracker` take `font-family` for them (the heading colour is `tracker-quest { heading-color }`); the rest of their text uses Minecraft's font to match the HUD. Toasts grow to fit their text, up to three quarters of the screen width.
+`font-family` sets all of an element's text; `title-font-family`, `heading-font-family`, `body-font-family` and `value-font-family` set one kind; `bold-font-family` sets bold words (in quest text, bold follows the font: `<name>-bold`). Inner elements inherit what outer ones set, as in CSS. Bold words in a custom font use `<name>-bold` (or `<name>_bold`) when you ship one, otherwise the font itself. Built-in names: `sanctum`, `sanctum-bold` and `minecraft-ten`. `fonts.json` can size named fonts too (`{ "fancy": { "pixelSize": 8 } }`). It works for every part of the quest book, its popups, editors and tooltips, and for quest text (`p`, `h1`, `li`...). Toast headings use the title font (Minecraft Ten), so `toast` takes `font-family` for them; the rest of toast text uses Minecraft's font to match the HUD. The tracker draws like Dungeon Minimap's info under the map: each quest title in the title font, in capitals, beside a gold diamond, over a rule that fades away from the screen edge, then the chapter, tasks, claim prompt and hint as smaller lines in the body font with a diamond bullet, all lined up on the side of the screen the tracker sits on. `tracker` takes `font-family` and `width`; it has no box unless you give it a `background-color`, `background-image` or border. `tracker-quest` takes `color` (the title), `muted-color` (chapter, hint, distance), `line-color` (tasks), `claim-color`, `accent-color` (first task's progress meter, compass arrow), `track-color` (the meter's empty part), `rule-color`, `rule-shadow-color`, `rule-fade` (share of the rule that fades out, 0 to 1), `bullet-color`, `bullet-outline-color` and `text-shadow-color`. Toasts grow to fit their text, up to three quarters of the screen width.
 
 Fonts are loaded once and kept until resource packs reload; a file changed in `config/trailmark/fonts` is picked up the next time a screen opens.
 
@@ -735,7 +735,7 @@ Wherever Trailmark takes a picture (icons, quest text, backgrounds, decorations,
 - A web link, when the **Web Media** setting is on.
 - A YouTube link (`youtube.com/watch?v=`, `youtu.be/`, `/shorts/`...), anywhere a video file goes: a decoration on the map, a quest's picture (its **Watch Video** button opens it), the video player. It works like a video file: it shows the video's thumbnail until it's played, has the same controls, pauses while off screen, and plays its sound only where a video file's sound would (a decoration with **Video Sound** on, the video player). A `t=` in the link sets where it starts. See [YouTube Videos](#youtube-videos).
 
-PNG, JPEG, BMP and animated GIF work out of the box, and so do OGG and WAV sounds. WebP, videos (MP4, WebM, MKV, MOV, M4V, AVI) and other sounds (MP3, FLAC, M4A, AAC, Opus) need FFmpeg. When quest media needs FFmpeg and it isn't installed, the quest book offers to download it the way Dungeon Config's settings do: into `config/dungeonconfig/bin`, shared with Dungeon Config and other mods, with **Don't Ask Again** shared too. An FFmpeg already on the system PATH is used as it is. Videos wait on their first frame until the player clicks play, and pause again while they're off screen. While a file is being fetched, its box and the sound and video players show how far along it is: a percentage, or the size so far if the server doesn't report one. Links connect the way browsers do, IPv6 first, falling back to Java's own client.
+PNG, JPEG, BMP and animated GIF, videos (MP4, WebM, MKV, MOV, M4V, AVI, FLV) and sounds (OGG, WAV, MP3, FLAC, M4A, AAC, Opus, AIFF) all work out of the box: Dungeon Config plays them through Velocity Prime, with nothing to install. WebP pictures aren't supported yet. Videos wait on their first frame until the player clicks play, and pause again while they're off screen. While a file is being fetched, its box and the sound and video players show how far along it is: a percentage, or the size so far if the server doesn't report one. Links connect the way browsers do, IPv6 first, falling back to Java's own client.
 
 Servers can limit shared files with **Largest Shared Media File** or turn sharing off with **Share Quest Media**.
 
@@ -774,13 +774,13 @@ Put a YouTube video on a quest page with the `youtube` tag, or with a Markdown p
 
 A YouTube link also works anywhere a video file does, such as a decoration on the map or a quest's picture (see [Pictures, GIFs and Videos](#pictures-gifs-and-videos)). Only one YouTube video plays at a time, wherever it is.
 
-Videos play right inside the quest book, with nothing else to install: Trailmark comes with Velocity, a small YouTube player, and plays through the same FFmpeg that Dungeon Config uses. If FFmpeg isn't installed yet, starting a video brings up Trailmark's usual offer to download it. Sound goes through Minecraft's own audio, following the Master and Jukebox/Note Blocks volumes. A video has the same controls as every other video in the book: a seek strip you can click or drag, play and pause, the time, a volume slider with a mute button, and a button to continue on YouTube. They show while the mouse is over the video or it's paused. Clicking the video itself pauses or plays it, and clicking it once it has ended plays it again. The stream is picked to match the video's size on screen, up to 1080p.
+Videos play right inside the quest book, with nothing else to install: they play through Velocity Prime, the media player that comes with Dungeon Config. Sound goes through Minecraft's own audio, following the Master and Jukebox/Note Blocks volumes. A video has the same controls as every other video in the book: a seek strip you can click or drag, play and pause, the time, a volume slider with a mute button, and a button to continue on YouTube. They show while the mouse is over the video or it's paused. Clicking the video itself pauses or plays it, and clicking it once it has ended plays it again. The stream is picked to match the video's size on screen, up to 1080p.
 
 The volume a player picks is remembered and used for every YouTube video from then on, in every quest pack. Until they pick one, each video starts at its own `volume`, or the book's `youtube_volume`.
 
 Only one video plays at a time, and it stops as soon as it leaves the screen: another quest is opened, the page is closed, or the book is closed. A video that can't be played (it was removed, is private, or is age-restricted) shows a notice, and clicking it opens the video on YouTube. Only public videos play; Trailmark never signs in to YouTube.
 
-With **Play YouTube in Game** turned off, or when FFmpeg can't be had (declined for good, or no build for the system), the embed shows the video's thumbnail and opens it in the player's browser, through Minecraft's usual link confirmation.
+With **Play YouTube in Game** turned off, the embed shows the video's thumbnail and opens it in the player's browser, through Minecraft's usual link confirmation. A video that can't be played in game says so, and clicking it opens it on YouTube the same way.
 
 ---
 
@@ -869,7 +869,7 @@ Open them from the gear button in the quest book, or edit `config/trailmark.json
 | Connection Lines | Pack Default | Right angles or straight lines between quests, overriding the quest pack's choice. |
 | Notifications, Sounds | On | |
 | Quest Language | Game language | |
-| Show Tracker, Tracker Position, Maximum Tracked Quests, Tracker Opacity | On, Right, 3, 85% | |
+| Show Tracker, Tracker Position, Maximum Tracked Quests, Tracker Opacity | On, Right, 3, 100% | Opacity fades the whole tracker. |
 | Avoid Other HUD Elements | On | The tracker slides along its edge, or moves to the other side of the screen, to stay clear of the scoreboard, effects and other mods' HUDs. A few mods draw their HUD outside Minecraft's usual drawing calls (JourneyMap's minimap is one); the tracker can't see those, so move it with the position and offset settings if it lands on one. |
 | Map Waypoints | On | Tracked quests' destinations as JourneyMap or Xaero's Minimap waypoints. |
 | Horizontal Offset, Vertical Offset | 0 | Fine-tune the tracker's position. |

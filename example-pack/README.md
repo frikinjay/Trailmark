@@ -47,7 +47,7 @@ chapters you don't need, or keep them for later:
 | Mekanism | Mekanism (NeoForge) |
 
 Some media plays from the internet (a YouTube trailer, a background picture and a music track in the Welcome
-chapter). Videos and MP3 music need FFmpeg; when it's missing, the quest book offers to download it for you.
+chapter). Videos and MP3 music play with nothing to install.
 
 ## Where to look
 

@@ -1,8 +1,7 @@
 # Trailmark
 
-Quest books for Minecraft on Fabric and NeoForge. Chapters on a map you can pan and zoom, quests with real
-3D icons, rich text, pictures, videos and music, a HUD tracker, team progress, and an editor that does everything
-in game.
+Trailmark is a quest book mod for Minecraft. Chapters are maps you can pan and zoom, quests have 3D icons and pages
+of formatted text with pictures, video and music, and there's a HUD tracker, team progress and an in-game editor.
 
 This repository is the public side of Trailmark. The mod itself is on
 [CurseForge](https://www.curseforge.com/projects/1773243) and [Modrinth](https://modrinth.com/mod/vuUW6QpR).
@@ -11,6 +10,7 @@ This repository is the public side of Trailmark. The mod itself is on
 |---|---|
 | [`DOCUMENTATION.md`](DOCUMENTATION.md) | The full guide: quest files, every task and reward, quest text, styling, media, integrations, commands, settings and the developer API |
 | [`example-pack/`](example-pack) | A complete example quest book that uses nearly every feature. Drop it in and play it, or open the files next to the docs |
+| [`description/`](description) | The CurseForge and Modrinth page bodies and the images and GIFs they show |
 | [`src/main/java/com/frikinjay/trailmark/api`](src/main/java/com/frikinjay/trailmark/api) | The public API, for mods that want to add tasks, rewards, signals, teams or stages, or react to quest events |
 
 ## For players and pack makers
@@ -22,8 +22,7 @@ while the game runs.
 
 Coming from FTB Quests? `/trailmark import ftbquests` converts your book and your players' progress.
 
-The [example pack](example-pack) is the quickest way to see what's possible. Its
-[README](example-pack/README.md) explains how to install it.
+The [example pack](example-pack) uses most features; its [README](example-pack/README.md) explains how to install it.
 
 ## For mod developers
 
@@ -44,7 +43,7 @@ dependencies {
 }
 ```
 
-A taste of the API:
+Some API calls:
 
 ```java
 TrailmarkApi.fireCustom(player, "found_ruins", 1);

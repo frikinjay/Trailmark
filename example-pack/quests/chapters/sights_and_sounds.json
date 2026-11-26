@@ -87,7 +87,7 @@
       "size": 1.2,
       "description": [
         "A quest's icon can be a **sound**. Its player sits right here: play, pause, stop and drag the bar to skip.",
-        "Sound IDs, OGG files in the pack's `media/` folder and links all work. MP3 and FLAC need FFmpeg, which the book offers to download."
+        "Sound IDs, links, and OGG, MP3 or FLAC files in the pack's `media/` folder all work, with nothing extra to install."
       ],
       "tasks": [
         {
